@@ -17,8 +17,16 @@ nav?.querySelectorAll("a").forEach((link) => {
 document.getElementById("year").textContent = new Date().getFullYear();
 
 const video = document.querySelector(".video-shell video");
-const placeholder = document.querySelector(".video-placeholder");
+const videoOverlay = document.querySelector(".video-overlay");
 
-video?.addEventListener("loadeddata", () => {
-  placeholder?.setAttribute("hidden", "");
+videoOverlay?.addEventListener("click", () => {
+  video?.play();
+});
+
+video?.addEventListener("play", () => {
+  videoOverlay?.setAttribute("hidden", "");
+});
+
+video?.addEventListener("ended", () => {
+  videoOverlay?.removeAttribute("hidden");
 });
