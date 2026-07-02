@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BSR Contract Chatbot — Union Red mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  // Colour tokens live here — edit these and every element below updates.
+  // Just refresh the page after changing a value.
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brandred: {
+            DEFAULT: '#A6192E', // brand red — masthead rule, citations, active states
+            hover: '#8A1522',   // darker red for hover/press states
+            tint: '#FBEEF0',    // pale red wash for badges/table headers
+          },
+          ink: '#1A1A1A',       // headings, user message bubbles
+          page: '#F5F4F2',      // page / message background
+          card: '#FFFFFF',      // card surface
+          line: '#E2E0DB',      // hairline borders
+          linestrong: '#DCD8D2',// table borders
+          secondary: '#5B5B58', // secondary text
+          tertiary: '#7A7A76',  // placeholders / eyebrow labels
+          successc: '#2E7D4F',  // success state
+          warningc: '#F2C230',  // warning state
+        },
+        fontFamily: {
+          serif: ['"Source Serif 4"', 'Georgia', 'serif'],
+          sans: ['Inter', '-apple-system', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'Menlo', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
+</head>
+<body class="bg-page font-sans text-ink">
+
+  <!-- Top hairline in brand red — a quiet institutional signal, not a banner -->
+  <div class="h-[3px] bg-brandred"></div>
+
+  <div class="max-w-3xl mx-auto px-6 py-10">
+
+    <!-- Masthead -->
+    <div class="flex items-start justify-between gap-6 mb-8">
+      <div>
+        <p class="text-[11px] tracking-[0.2em] uppercase text-brandred font-semibold mb-2.5">Equity doc chat</p>
+        <h1 class="font-serif text-[27px] font-semibold text-ink mb-1.5 tracking-tight">Contract Chatbot</h1>
+        <p class="text-[13px] text-secondary leading-relaxed max-w-md">
+          Clause-level contract intelligence for Equity members.
+        </p>
+      </div>
+      <div class="flex flex-col items-end gap-2.5 shrink-0 pt-1">
+        <span class="text-[12px] text-secondary">andy.c.eadie@gmail.com</span>
+        <button class="text-[12px] text-ink border border-line rounded-full px-3.5 py-1.5 hover:border-linestrong hover:bg-white transition-colors">
+          Sign out
+        </button>
+      </div>
+    </div>
+
+    <!-- Contract selector — premium pills -->
+    <div class="mb-9">
+      <div class="h-[2px] w-full bg-brandred mb-2.5"></div>
+      <p class="text-[10.5px] tracking-[0.16em] uppercase text-tertiary mb-3">Choose your contract</p>
+      <div class="flex flex-wrap gap-2">
+        <button class="text-[12.5px] font-medium px-4 py-2 rounded-full bg-brandred text-white shadow-[0_1px_2px_rgba(166,25,46,0.35)] hover:bg-brandred-hover transition-colors">
+          Pact Cinema
+        </button>
+        <button class="text-[12.5px] font-medium px-4 py-2 rounded-full bg-white border border-line text-secondary shadow-[0_1px_2px_rgba(26,26,26,0.04)] hover:border-brandred/40 hover:text-ink transition-colors">
+          Pact TV &amp; SVoD
+        </button>
+        <button class="text-[12.5px] font-medium px-4 py-2 rounded-full bg-white border border-line text-secondary shadow-[0_1px_2px_rgba(26,26,26,0.04)] hover:border-brandred/40 hover:text-ink transition-colors">
+          BBC TV
+        </button>
+        <button class="text-[12.5px] font-medium px-4 py-2 rounded-full bg-white border border-line text-secondary shadow-[0_1px_2px_rgba(26,26,26,0.04)] hover:border-brandred/40 hover:text-ink transition-colors">
+          ITV TV
+        </button>
+        <button class="text-[12.5px] font-medium px-4 py-2 rounded-full bg-white border border-line text-secondary shadow-[0_1px_2px_rgba(26,26,26,0.04)] hover:border-brandred/40 hover:text-ink transition-colors">
+          Commercial
+        </button>
+        <button class="text-[12.5px] font-medium px-4 py-2 rounded-full bg-white border border-line text-secondary shadow-[0_1px_2px_rgba(26,26,26,0.04)] hover:border-brandred/40 hover:text-ink transition-colors">
+          MoCap
+        </button>
+      </div>
+    </div>
+
+    <!-- Chat panel -->
+    <div class="bg-card border border-line rounded-xl shadow-[0_1px_3px_rgba(26,26,26,0.05)] p-5 sm:p-8">
+
+      <!-- User message 1 -->
+      <div class="flex items-start justify-end gap-2.5 mb-5">
+        <div class="bg-ink text-page text-[13.5px] px-4 py-2.5 rounded-2xl rounded-tr-sm max-w-[80%]">
+          whts overtime
+        </div>
+        <div class="w-7 h-7 rounded-full bg-brandred-hover text-white text-[10px] font-semibold flex items-center justify-center shrink-0 mt-0.5">AE</div>
+      </div>
+
+      <!-- Assistant message 1 -->
+      <div class="flex items-start gap-2.5 mb-2">
+        <div class="w-7 h-7 rounded-full bg-brandred-tint flex items-center justify-center shrink-0 mt-0.5">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+            <rect x="5" y="9" width="14" height="11" rx="3" stroke="#A6192E" stroke-width="1.8"/>
+            <path d="M12 9V5" stroke="#A6192E" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="12" cy="3.5" r="1.5" fill="#A6192E"/>
+            <circle cx="9" cy="14" r="1.3" fill="#A6192E"/>
+            <circle cx="15" cy="14" r="1.3" fill="#A6192E"/>
+            <path d="M9 17.5h6" stroke="#A6192E" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M2 13v3M22 13v3" stroke="#A6192E" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="flex-1 bg-page rounded-2xl rounded-tl-sm px-4 sm:px-5 py-4 text-[13.5px] leading-relaxed text-ink">
+          <p class="mb-4 text-secondary">
+            The summary document also contains overtime information. Here is the relevant position from the provided documents.
+          </p>
+
+          <div class="flex gap-3 mb-5">
+            <div class="w-[3px] rounded-full bg-brandred shrink-0"></div>
+            <div class="flex-1">
+              <p class="inline-block font-mono text-[10.5px] font-semibold tracking-[0.14em] text-white bg-brandred uppercase mb-2 px-2 py-1 rounded">Clause F15.1&ndash;F15.3</p>
+              <p class="font-serif text-[15.5px] font-semibold text-ink mb-3">Overtime</p>
+
+              <ul class="space-y-2 mb-4">
+                <li class="flex gap-2.5">
+                  <span class="mt-[7px] h-[5px] w-[5px] rounded-full bg-brandred shrink-0"></span>
+                  <span><span class="font-semibold">Rate:</span> hourly overtime is paid at <span class="font-mono text-[12.5px] font-semibold text-brandred bg-brandred-tint border border-brandred/25 px-1.5 py-[2px] rounded-md">1/3</span> of the daily Performance Salary, subject to a maximum of <span class="font-mono text-[12.5px] font-semibold text-brandred bg-brandred-tint border border-brandred/25 px-1.5 py-[2px] rounded-md">£88</span> per hour or part thereof.</span>
+                </li>
+                <li class="flex gap-2.5">
+                  <span class="mt-[7px] h-[5px] w-[5px] rounded-full bg-brandred shrink-0"></span>
+                  <span><span class="font-semibold">Daily limit:</span> overtime is limited to four hours per day; any additional overtime is subject to local discussion.</span>
+                </li>
+                <li class="flex gap-2.5">
+                  <span class="mt-[7px] h-[5px] w-[5px] rounded-full bg-brandred shrink-0"></span>
+                  <span><span class="font-semibold">15-minute grace:</span> artists shall work 15 minutes overtime without payment to complete a &ldquo;take&rdquo; when requested at the end of the working day or night. If overtime extends beyond those 15 minutes, the 15-minute period is included for payment purposes.</span>
+                </li>
+                <li class="flex gap-2.5">
+                  <span class="mt-[7px] h-[5px] w-[5px] rounded-full bg-brandred shrink-0"></span>
+                  <span>These overtime payments are <span class="font-semibold">not included</span> in the Artist&rsquo;s Total Applicable Salary.</span>
+                </li>
+                <li class="flex gap-2.5">
+                  <span class="mt-[7px] h-[5px] w-[5px] rounded-full bg-brandred shrink-0"></span>
+                  <span>The overtime provisions may be varied where an Artist&rsquo;s weekly Performance Salary exceeds <span class="font-mono text-[12.5px] font-semibold text-brandred bg-brandred-tint border border-brandred/25 px-1.5 py-[2px] rounded-md">£4,767</span>.</span>
+                </li>
+              </ul>
+
+              <div class="rounded-lg border border-line overflow-hidden mb-4">
+                <div class="px-4 py-2.5 bg-brandred-tint border-b border-line">
+                  <p class="text-[12px] font-semibold text-ink">Stunt Coordinators &amp; Performers</p>
+                  <p class="text-[11px] text-secondary">PACT Cinema summary &middot; effective 6 April 2026</p>
+                </div>
+                <table class="w-full text-[12.5px] border-collapse">
+                  <thead>
+                    <tr class="text-left text-tertiary text-[10.5px] uppercase tracking-wide">
+                      <th class="px-4 py-2 font-medium">Item</th>
+                      <th class="px-4 py-2 font-medium">Rate</th>
+                      <th class="px-4 py-2 font-medium">Notes</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="px-4 py-2.5 border-t border-line">Overtime</td>
+                      <td class="px-4 py-2.5 border-t border-line font-mono text-brandred">1/7 daily/hr</td>
+                      <td class="px-4 py-2.5 border-t border-line text-secondary">15-min grace on first hour only &mdash; may complete a take without OT payment</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="text-secondary">
+                So for Stunt Coordinators and Performers, the overtime rate is expressed as <span class="font-semibold text-ink">1/7 of the daily rate per hour</span>, rather than the general 1/3 daily rate, with a 15-minute grace period on the first hour only.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feedback row 1 -->
+      <div class="flex gap-2 mb-9 pl-[38px]">
+        <button class="text-[11px] px-3 py-1.5 rounded-full border border-line text-secondary hover:border-linestrong transition-colors">Not helpful</button>
+        <button class="text-[11px] px-3 py-1.5 rounded-full border border-line text-secondary hover:border-linestrong transition-colors">Partly helpful</button>
+        <button class="text-[11px] px-3 py-1.5 rounded-full border border-brandred text-brandred bg-brandred-tint font-medium">Helpful</button>
+      </div>
+
+      <!-- User message 2 -->
+      <div class="flex items-start justify-end gap-2.5 mb-5">
+        <div class="bg-ink text-page text-[13.5px] px-4 py-2.5 rounded-2xl rounded-tr-sm max-w-[80%]">
+          wassit
+        </div>
+        <div class="w-7 h-7 rounded-full bg-brandred text-white text-[10px] font-semibold flex items-center justify-center shrink-0 mt-0.5">AE</div>
+      </div>
+
+      <!-- Assistant message 2 -->
+      <div class="flex items-start gap-2.5 mb-2">
+        <div class="w-7 h-7 rounded-full bg-brandred-tint flex items-center justify-center shrink-0 mt-0.5">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+            <rect x="5" y="9" width="14" height="11" rx="3" stroke="#A6192E" stroke-width="1.8"/>
+            <path d="M12 9V5" stroke="#A6192E" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="12" cy="3.5" r="1.5" fill="#A6192E"/>
+            <circle cx="9" cy="14" r="1.3" fill="#A6192E"/>
+            <circle cx="15" cy="14" r="1.3" fill="#A6192E"/>
+            <path d="M9 17.5h6" stroke="#A6192E" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M2 13v3M22 13v3" stroke="#A6192E" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="flex-1 bg-page rounded-2xl rounded-tl-sm px-4 sm:px-5 py-3.5 text-[13.5px] text-secondary italic">
+          I can only answer questions about the provided documents.
+        </div>
+      </div>
+
+      <!-- Feedback row 2 -->
+      <div class="flex gap-2 pl-[38px]">
+        <button class="text-[11px] px-3 py-1.5 rounded-full border border-line text-secondary hover:border-linestrong transition-colors">Not helpful</button>
+        <button class="text-[11px] px-3 py-1.5 rounded-full border border-line text-secondary hover:border-linestrong transition-colors">Partly helpful</button>
+        <button class="text-[11px] px-3 py-1.5 rounded-full border border-line text-secondary hover:border-linestrong transition-colors">Helpful</button>
+      </div>
+
+      <!-- Input bar -->
+      <div class="mt-7 pt-5 border-t border-line flex gap-2.5">
+        <input
+          type="text"
+          placeholder="Ask about the Pact Cinema agreement…"
+          class="flex-1 bg-page border border-line rounded-lg px-4 py-3 text-[13.5px] placeholder:text-tertiary focus:outline-none focus:ring-2 focus:ring-brandred/25 focus:border-brandred transition-shadow"
+        />
+        <button class="px-5 py-3 rounded-lg bg-brandred text-white text-[13px] font-medium hover:bg-brandred-hover transition-colors">
+          Ask
+        </button>
+      </div>
+
+    </div>
+
+    <p class="text-center text-[11px] text-tertiary mt-5">
+      Answers are generated from clause text in the selected agreement. Always confirm against the source document.
+    </p>
+
+  </div>
+
+</body>
+</html>

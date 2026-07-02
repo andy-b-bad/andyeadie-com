@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="AI web development and professional stunt performance portfolio." />
+  <meta name="theme-color" content="#090b10" />
+  <title>Andy Eadie — AI Web Developer & Stunt Performer</title>
+  <style>
+:root {
+  --ink: #0b0d12;
+  --paper: #f4f1e9;
+  --muted: #6f737d;
+  --line: rgba(11, 13, 18, 0.14);
+  --ai: #5b7cff;
+  --ai-bright: #89a0ff;
+  --stunt: #f05a35;
+  --stunt-bright: #ff9d72;
+  --dark: #090b10;
+  --max: 1240px;
+  --radius: 22px;
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.14);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.55;
+}
+a { color: inherit; }
+img, video { max-width: 100%; display: block; }
+button, input, textarea, select { font: inherit; }
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+.skip-link {
+  position: fixed;
+  left: 1rem; top: -4rem;
+  z-index: 100;
+  padding: .75rem 1rem;
+  background: white;
+  border-radius: 8px;
+}
+.skip-link:focus { top: 1rem; }
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px clamp(20px, 4vw, 56px);
+  color: white;
+  background: linear-gradient(to bottom, rgba(9,11,16,.88), rgba(9,11,16,.35), transparent);
+  backdrop-filter: blur(2px);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  font-weight: 750;
+}
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 38px; height: 38px;
+  border: 1px solid rgba(255,255,255,.45);
+  border-radius: 50%;
+  font-size: .78rem;
+  letter-spacing: .04em;
+}
+.primary-nav {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+.primary-nav a {
+  text-decoration: none;
+  font-size: .9rem;
+  font-weight: 650;
+}
+.nav-cta {
+  border: 1px solid rgba(255,255,255,.5);
+  padding: 9px 14px;
+  border-radius: 999px;
+}
+.menu-button {
+  display: none;
+  background: none;
+  border: 0;
+  padding: 8px;
+}
+.menu-button span:not(.sr-only) {
+  display: block;
+  width: 26px;
+  height: 2px;
+  margin: 5px 0;
+  background: white;
+}
+
+.hero {
+  min-height: 100vh;
+  background: var(--dark);
+  color: white;
+  padding-top: 104px;
+}
+.hero-intro {
+  width: min(var(--max), calc(100% - 40px));
+  margin: 0 auto;
+  padding: clamp(70px, 9vw, 130px) 0 clamp(46px, 6vw, 78px);
+}
+.eyebrow, .card-label {
+  margin: 0 0 12px;
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.eyebrow { color: var(--ai-bright); }
+h1, h2, h3, p { margin-top: 0; }
+h1 {
+  max-width: 1050px;
+  margin-bottom: 24px;
+  font-size: clamp(3rem, 7vw, 7rem);
+  line-height: .94;
+  letter-spacing: -.06em;
+}
+.hero-copy {
+  max-width: 760px;
+  color: rgba(255,255,255,.7);
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+}
+.hero-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 360px;
+}
+.hero-panel {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 360px;
+  padding: clamp(32px, 5vw, 72px);
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform .35s ease, filter .35s ease;
+}
+.hero-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-size: cover;
+}
+.hero-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.hero-panel-ai::before {
+  background:
+    radial-gradient(circle at 18% 24%, rgba(137,160,255,.55), transparent 24%),
+    linear-gradient(135deg, #132044 0%, #0a1020 58%, #141822 100%);
+}
+.hero-panel-ai::after {
+  background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.hero-panel-stunts::before {
+  background:
+    radial-gradient(circle at 75% 25%, rgba(240,90,53,.72), transparent 23%),
+    linear-gradient(135deg, #2b1110 0%, #130c0b 58%, #18110f 100%);
+}
+.hero-panel-stunts::after {
+  background: linear-gradient(to top, rgba(0,0,0,.5), transparent 55%);
+}
+.hero-panel:hover { transform: translateY(-8px); filter: brightness(1.08); }
+.panel-kicker { font-size: .72rem; letter-spacing: .18em; opacity: .62; }
+.panel-title {
+  margin-top: 12px;
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.04em;
+}
+.panel-copy {
+  max-width: 560px;
+  margin-top: 16px;
+  color: rgba(255,255,255,.68);
+}
+.panel-link { margin-top: 26px; font-weight: 750; }
+
+.section {
+  padding: clamp(88px, 11vw, 150px) clamp(20px, 4vw, 56px);
+}
+.section > * {
+  width: min(var(--max), 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 46px;
+}
+.section-heading h2,
+.section-about h2,
+.contact-section h2 {
+  max-width: 880px;
+  margin-bottom: 0;
+  font-size: clamp(2.5rem, 5.5vw, 5.5rem);
+  line-height: 1;
+  letter-spacing: -.055em;
+}
+.text-link {
+  flex: 0 0 auto;
+  font-weight: 750;
+  text-underline-offset: 4px;
+}
+.feature-card {
+  display: grid;
+  grid-template-columns: .95fr 1.25fr;
+  gap: clamp(28px, 5vw, 70px);
+  align-items: center;
+  padding: clamp(28px, 5vw, 70px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.58);
+  box-shadow: var(--shadow);
+}
+.feature-copy h3, .showreel-copy h3, .notable-work h3 {
+  margin-bottom: 18px;
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1;
+  letter-spacing: -.045em;
+}
+.feature-copy p:not(.card-label) {
+  color: #4f535d;
+  font-size: 1.05rem;
+}
+.card-label { color: var(--ai); }
+.button-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 750;
+}
+.button-primary { color: white; background: var(--ink); }
+.button-secondary { border: 1px solid var(--line); background: transparent; }
+.button-large { min-height: 58px; padding: 0 26px; }
+
+.app-preview {
+  position: relative;
+  display: grid;
+  grid-template-columns: 28% 72%;
+  min-height: 430px;
+  overflow: hidden;
+  border: 1px solid rgba(11,13,18,.13);
+  border-radius: 16px;
+  background: #f8f9fc;
+  box-shadow: 0 30px 60px rgba(11,13,18,.16);
+}
+.browser-bar {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 2;
+  height: 38px;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  padding-left: 14px;
+  background: #e9ebf1;
+}
+.browser-bar span {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #b7bcc8;
+}
+.mock-sidebar {
+  padding: 70px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: #111722;
+  color: white;
+}
+.mock-sidebar span {
+  font-size: .76rem;
+  color: rgba(255,255,255,.6);
+}
+.mock-chat { padding: 74px 24px 24px; }
+.mock-question {
+  margin-left: auto;
+  max-width: 78%;
+  padding: 16px;
+  border-radius: 16px 16px 4px 16px;
+  background: #dfe6ff;
+  font-size: .86rem;
+}
+.mock-answer {
+  max-width: 88%;
+  margin-top: 18px;
+  padding: 18px;
+  border: 1px solid #d7dbe5;
+  border-radius: 4px 16px 16px 16px;
+  background: white;
+}
+.mock-line {
+  display: block;
+  width: 62%;
+  height: 8px;
+  margin: 9px 0;
+  border-radius: 999px;
+  background: #dfe2ea;
+}
+.mock-line.long { width: 95%; }
+.mock-line.medium { width: 78%; }
+.mock-answer small { display: block; margin-top: 18px; color: var(--ai); }
+
+.wins-block { margin-top: 70px; }
+.pill-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+.pill-grid span {
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255,255,255,.45);
+  font-size: .92rem;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 70px;
+}
+.project-card {
+  min-height: 290px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255,255,255,.4);
+}
+.project-card h3 { font-size: 1.55rem; line-height: 1.15; }
+.project-card p:not(.card-label) { color: var(--muted); }
+.status {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--ai);
+  font-size: .82rem;
+  font-weight: 800;
+}
+.faq {
+  display: grid;
+  grid-template-columns: .7fr 1.3fr;
+  gap: 60px;
+  margin-top: 100px;
+}
+.faq h3 { font-size: 2rem; }
+.faq-list details { border-top: 1px solid var(--line); }
+.faq-list details:last-child { border-bottom: 1px solid var(--line); }
+.faq-list summary {
+  cursor: pointer;
+  padding: 24px 0;
+  font-weight: 750;
+}
+.faq-list p { color: var(--muted); padding-right: 30px; }
+
+.section-stunts {
+  color: white;
+  background: #0a0a0b;
+}
+.section-heading-light .eyebrow,
+.light-label { color: var(--stunt-bright); }
+.text-link.light { color: white; }
+.showreel-grid {
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: clamp(34px, 6vw, 82px);
+  align-items: center;
+}
+.video-shell {
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(circle at center, rgba(240,90,53,.28), transparent 28%),
+    linear-gradient(135deg, #1e1e22, #09090b);
+}
+.video-shell video {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  letter-spacing: .2em;
+}
+.video-placeholder small {
+  margin-top: 8px;
+  color: rgba(255,255,255,.5);
+  letter-spacing: normal;
+}
+.showreel-copy p:not(.card-label) { color: rgba(255,255,255,.66); }
+.stunt-stats { margin-top: 34px; }
+.stunt-stats div {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 18px;
+  padding: 15px 0;
+  border-top: 1px solid rgba(255,255,255,.14);
+}
+.stunt-stats span { color: rgba(255,255,255,.5); }
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+  margin-top: 90px;
+}
+.gallery-card { margin: 0; }
+.gallery-card-large { grid-row: 1 / span 2; }
+.gallery-placeholder {
+  display: grid;
+  place-items: center;
+  min-height: 260px;
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, rgba(240,90,53,.26), transparent),
+    #18181c;
+  color: rgba(255,255,255,.4);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .76rem;
+}
+.gallery-card-large .gallery-placeholder { height: 100%; min-height: 550px; }
+.gallery figcaption {
+  padding: 10px 2px 0;
+  color: rgba(255,255,255,.48);
+  font-size: .82rem;
+}
+.notable-work {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 70px;
+  margin-top: 100px;
+}
+.credit-list div {
+  display: grid;
+  grid-template-columns: .75fr 1.25fr;
+  gap: 20px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255,255,255,.16);
+}
+.credit-list span { color: rgba(255,255,255,.5); }
+
+.section-about { background: #e9e4da; }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 8vw, 120px);
+}
+.about-grid p {
+  color: #555962;
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+}
+
+.contact-section {
+  padding: clamp(90px, 13vw, 180px) 20px;
+  text-align: center;
+  background: var(--ai);
+  color: white;
+}
+.contact-section .eyebrow { color: rgba(255,255,255,.65); }
+.contact-section h2 { margin: 0 auto 34px; }
+.contact-section .button-primary { background: white; color: var(--ink); }
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 28px clamp(20px, 4vw, 56px);
+  background: var(--dark);
+  color: rgba(255,255,255,.6);
+  font-size: .86rem;
+}
+.site-footer div { display: flex; gap: 20px; }
+.site-footer a { color: white; }
+
+@media (max-width: 900px) {
+  .menu-button { display: block; }
+  .primary-nav {
+    position: fixed;
+    inset: 70px 16px auto;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 16px;
+    background: rgba(9,11,16,.98);
+    box-shadow: var(--shadow);
+  }
+  .primary-nav.open { display: flex; }
+  .primary-nav a { padding: 14px; }
+  .hero-split,
+  .feature-card,
+  .showreel-grid,
+  .faq,
+  .notable-work,
+  .about-grid { grid-template-columns: 1fr; }
+  .project-grid { grid-template-columns: 1fr 1fr; }
+  .feature-card { align-items: stretch; }
+  .app-preview { min-height: 360px; }
+  .gallery { grid-template-columns: 1fr 1fr; }
+  .gallery-card-large { grid-column: 1 / -1; grid-row: auto; }
+  .gallery-card-large .gallery-placeholder { min-height: 440px; }
+}
+
+@media (max-width: 640px) {
+  .site-header { padding: 14px 18px; }
+  .brand-name { display: none; }
+  .hero { padding-top: 76px; }
+  .hero-intro { width: calc(100% - 32px); padding-top: 58px; }
+  h1 { font-size: clamp(2.8rem, 14vw, 4.8rem); }
+  .hero-panel { min-height: 300px; padding: 28px 20px; }
+  .section { padding-left: 16px; padding-right: 16px; }
+  .section-heading { display: block; }
+  .section-heading .text-link { display: inline-block; margin-top: 18px; }
+  .feature-card { padding: 22px; }
+  .app-preview { grid-template-columns: 1fr; min-height: 380px; }
+  .mock-sidebar { display: none; }
+  .project-grid { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: 1fr; }
+  .gallery-card-large { grid-column: auto; }
+  .gallery-card-large .gallery-placeholder,
+  .gallery-placeholder { min-height: 330px; }
+  .credit-list div,
+  .stunt-stats div { grid-template-columns: 1fr; gap: 6px; }
+  .site-footer { flex-direction: column; }
+}
+
+  </style>
+  <script defer>
+const menuButton = document.querySelector(".menu-button");
+const nav = document.querySelector(".primary-nav");
+
+menuButton?.addEventListener("click", () => {
+  const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+  menuButton.setAttribute("aria-expanded", String(!isOpen));
+  nav.classList.toggle("open");
+});
+
+nav?.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("open");
+    menuButton?.setAttribute("aria-expanded", "false");
+  });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const video = document.querySelector(".video-shell video");
+const placeholder = document.querySelector(".video-placeholder");
+
+video?.addEventListener("loadeddata", () => {
+  placeholder?.setAttribute("hidden", "");
+});
+
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Home">
+      <span class="brand-mark">AE</span>
+      <span class="brand-name">Andy Eadie</span>
+    </a>
+
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+      <span class="sr-only">Open navigation</span>
+    </button>
+
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+      <a href="#ai">AI Web Development</a>
+      <a href="#stunts">Stunts</a>
+      <a href="#about">About</a>
+      <a class="nav-cta" href="mailto:hello@andyeadie.com">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="top" class="hero">
+      <div class="hero-intro">
+        <p class="eyebrow">Two disciplines. One portfolio.</p>
+        <h1>I build intelligent software.<br />I perform physical action.</h1>
+        <p class="hero-copy">
+          AI web development, contract intelligence and automation — alongside professional stunt performance for film and television.
+        </p>
+      </div>
+
+      <div class="hero-split" aria-label="Choose a portfolio">
+        <a class="hero-panel hero-panel-ai" href="#ai">
+          <span class="panel-kicker">01 / DIGITAL</span>
+          <span class="panel-title">AI Web Development</span>
+          <span class="panel-copy">Production-ready AI tools, web applications and agent workflows.</span>
+          <span class="panel-link">View AI work <span aria-hidden="true">→</span></span>
+        </a>
+
+        <a class="hero-panel hero-panel-stunts" href="#stunts">
+          <span class="panel-kicker">02 / PHYSICAL</span>
+          <span class="panel-title">Stunt Performance</span>
+          <span class="panel-copy">Screen combat, action performance, doubling and specialist movement.</span>
+          <span class="panel-link">View stunt work <span aria-hidden="true">→</span></span>
+        </a>
+      </div>
+    </section>
+
+    <section id="ai" class="section section-ai">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">AI WEB DEVELOPMENT</p>
+          <h2>Software that solves real operational problems.</h2>
+        </div>
+        <a class="text-link" href="#" aria-label="Open LinkedIn profile">LinkedIn ↗</a>
+      </div>
+
+      <article class="feature-card">
+        <div class="feature-copy">
+          <p class="card-label">FLAGSHIP PROJECT</p>
+          <h3>Contract Chat</h3>
+          <p>
+            An AI-assisted contract analysis application designed to retrieve evidence, answer questions against source documents and preserve an auditable trail of what users asked and what the system returned.
+          </p>
+          <div class="button-row">
+            <a class="button button-primary" href="#" target="_blank" rel="noopener">Open Contract Chat</a>
+            <a class="button button-secondary" href="#ai-examples">See examples</a>
+          </div>
+        </div>
+
+        <div class="app-preview" role="img" aria-label="Placeholder for Contract Chat screenshot">
+          <div class="browser-bar"><span></span><span></span><span></span></div>
+          <div class="mock-sidebar">
+            <strong>Contract Chat</strong>
+            <span>New conversation</span>
+            <span>Recent questions</span>
+          </div>
+          <div class="mock-chat">
+            <div class="mock-question">What obligations apply before construction begins?</div>
+            <div class="mock-answer">
+              <span class="mock-line long"></span>
+              <span class="mock-line"></span>
+              <span class="mock-line medium"></span>
+              <small>Evidence: pages 14, 18 and 22</small>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="wins-block">
+        <p class="card-label">SELECTED CAPABILITIES</p>
+        <div class="pill-grid">
+          <span>AI retrieval systems</span>
+          <span>Next.js applications</span>
+          <span>Supabase architecture</span>
+          <span>Document intelligence</span>
+          <span>Agent workflows</span>
+          <span>Evaluation and trace logging</span>
+          <span>Property data engineering</span>
+          <span>Production deployment</span>
+        </div>
+      </div>
+
+      <div id="ai-examples" class="project-grid">
+        <article class="project-card">
+          <p class="card-label">IN DEVELOPMENT</p>
+          <h3>Property Intelligence Platform</h3>
+          <p>Large-scale UK property ownership, valuation and Companies House enrichment using DuckDB, Python and geospatial data.</p>
+          <span class="status">Active build</span>
+        </article>
+
+        <article class="project-card">
+          <p class="card-label">IN DEVELOPMENT</p>
+          <h3>Personal Agent Infrastructure</h3>
+          <p>A self-hosted assistant platform connecting structured memory, communications, health data and task-specific agents.</p>
+          <span class="status">Private beta</span>
+        </article>
+
+        <article class="project-card">
+          <p class="card-label">CONSULTING</p>
+          <h3>AI Product Prototyping</h3>
+          <p>Focused discovery, architecture and implementation for businesses that need a working AI product rather than a slide deck.</p>
+          <a class="text-link" href="mailto:hello@andyeadie.com">Discuss a project →</a>
+        </article>
+      </div>
+
+      <div class="faq">
+        <div class="faq-intro">
+          <p class="card-label">FAQ</p>
+          <h3>Common questions</h3>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>What kind of AI products do you build?</summary>
+            <p>Document-question answering systems, retrieval applications, workflow automation, data products and specialised agent interfaces.</p>
+          </details>
+          <details>
+            <summary>Can you work with an existing product or codebase?</summary>
+            <p>Yes. Engagements can begin with an architecture audit, a contained feature build or a technical recovery plan for an existing application.</p>
+          </details>
+          <details>
+            <summary>Do you take on commercial projects?</summary>
+            <p>Yes. The most suitable projects have a clearly defined operational problem, accessible domain expertise and a realistic path to deployment.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="stunts" class="section section-stunts">
+      <div class="section-heading section-heading-light">
+        <div>
+          <p class="eyebrow">STUNT PERFORMANCE</p>
+          <h2>Professional action for camera.</h2>
+        </div>
+        <a class="text-link light" href="#" aria-label="Open IMDb profile">IMDb ↗</a>
+      </div>
+
+      <div class="showreel-grid">
+        <div class="video-shell">
+          <video controls preload="metadata" playsinline poster="assets/showreel-poster.jpg">
+            <source src="assets/showreel.mp4" type="video/mp4" />
+            Your browser does not support HTML5 video.
+          </video>
+          <div class="video-placeholder">
+            <span>SHOWREEL</span>
+            <small>Add assets/showreel.mp4</small>
+          </div>
+        </div>
+
+        <div class="showreel-copy">
+          <p class="card-label light-label">SHOWREEL</p>
+          <h3>Screen action, precision and repeatability.</h3>
+          <p>
+            A portfolio of professional stunt work across film and television, including action performance, doubling, fights, falls and specialist movement.
+          </p>
+          <div class="stunt-stats">
+            <div><strong>Film & TV</strong><span>Professional credits</span></div>
+            <div><strong>Action</strong><span>Performance and doubling</span></div>
+            <div><strong>Camera</strong><span>Repeatable, production-aware execution</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <figure class="gallery-card gallery-card-large">
+          <div class="gallery-placeholder">Professional still 01</div>
+          <figcaption>Production still / featured stunt</figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-placeholder">Professional still 02</div>
+          <figcaption>Screen combat</figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-placeholder">Professional still 03</div>
+          <figcaption>Action performance</figcaption>
+        </figure>
+      </div>
+
+      <div class="notable-work">
+        <div>
+          <p class="card-label light-label">NOTABLE WORK</p>
+          <h3>Selected credits and capabilities</h3>
+        </div>
+        <div class="credit-list">
+          <div><span>Production / credit</span><strong>Add notable title</strong></div>
+          <div><span>Production / credit</span><strong>Add notable title</strong></div>
+          <div><span>Production / credit</span><strong>Add notable title</strong></div>
+          <div><span>Specialisms</span><strong>Fights · Falls · Doubling · Action</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section section-about">
+      <div class="about-grid">
+        <div>
+          <p class="eyebrow">ABOUT</p>
+          <h2>Technical judgement and physical execution.</h2>
+        </div>
+        <div>
+          <p>
+            The two sides of this portfolio share the same operating principles: preparation, risk control, precision and reliable delivery under pressure.
+          </p>
+          <p>
+            For AI work, that means building systems that can be tested, inspected and improved. For stunts, it means executing action safely, consistently and in service of the shot.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <p class="eyebrow">CONTACT</p>
+      <h2>AI project, stunt enquiry, or both.</h2>
+      <a class="button button-primary button-large" href="mailto:hello@andyeadie.com">hello@andyeadie.com</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span id="year"></span> Andy Eadie</span>
+    <div>
+      <a href="#">LinkedIn</a>
+      <a href="#">IMDb</a>
+      <a href="mailto:hello@andyeadie.com">Email</a>
+    </div>
+  </footer>
+</body>
+</html>
