@@ -1,0 +1,46 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+AGENTS.md
+
+# VS Code local settings
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# Logs / temp
+*.log
+*.tmp
+*.bak
+.cache/
+tmp/
+temp/
+
+# Dependencies / build output
+node_modules/
+dist/
+build/
+.next/
+out/
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+client_secret_*.json
+
+# Large local source/media files - keep out unless deliberately needed
+*.mov
+*.mp4
+*.m4v
+*.avi
+*.wmv
+*.mkv
+*.psd
+*.ai
+*.zip
+*.tar
+*.tar.gz
+*.7z
