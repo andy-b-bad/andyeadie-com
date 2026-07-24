@@ -2252,3 +2252,113 @@ body.node-network-page {
     --net-node-speed: 0;
   }
 }
+
+/* ==========================================================================
+   4. Flow and alignment refinements
+   ========================================================================== */
+
+.node-network-page .hero {
+  min-height: 0;
+}
+
+.node-network-page .hero-line-ai {
+  color: var(--ai);
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  animation: none;
+  will-change: auto;
+}
+
+.node-network-page .section-heading {
+  margin-bottom: 40px;
+}
+
+.node-network-page .faq {
+  margin-top: 72px;
+}
+
+.node-network-page .wins-block {
+  margin-top: 44px;
+}
+
+.node-network-page .project-grid {
+  margin-top: 40px;
+}
+
+.node-network-page .gallery,
+.node-network-page .notable-work {
+  margin-top: 72px;
+}
+
+.node-network-page .contact-section {
+  display: grid;
+  grid-template-columns: minmax(0, var(--max));
+  align-content: center;
+  justify-content: center;
+  gap: 28px;
+  padding-block: 96px;
+}
+
+.node-network-page .contact-section > * {
+  width: auto;
+  margin-inline: 0;
+}
+
+.node-network-page .contact-section .eyebrow {
+  margin-bottom: 0;
+}
+
+.node-network-page .contact-section .button-large {
+  justify-self: start;
+}
+
+@media (min-width: 681px) {
+  .node-network-page .hero-split {
+    margin-bottom: 56px;
+  }
+
+  .node-network-page .section {
+    padding-block: 96px;
+  }
+}
+
+@media (max-width: 680px) {
+  .node-network-page .hero-split {
+    margin-bottom: 52px;
+  }
+
+  .node-network-page .section {
+    padding-block: 64px;
+  }
+
+  .node-network-page .section-heading {
+    margin-bottom: 36px;
+  }
+
+  .node-network-page .faq {
+    margin-top: 64px;
+  }
+
+  .node-network-page .wins-block {
+    margin-top: 40px;
+  }
+
+  .node-network-page .project-grid {
+    margin-top: 36px;
+  }
+
+  .node-network-page .gallery,
+  .node-network-page .notable-work {
+    margin-top: 60px;
+  }
+
+  .node-network-page .contact-section {
+    gap: 24px;
+    padding-block: 64px;
+  }
+
+  .node-network-page .site-footer {
+    padding-top: 24px;
+    padding-bottom: 40px;
+  }
+}
