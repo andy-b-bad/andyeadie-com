@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="-343 -520.604 686 905.384"
+     role="img"
+     aria-labelledby="title desc"
+     class="house-wireframe"
+     style="color:#33d9c9">
+  <title id="title">Woodintole property wireframe — CSS-ready static SVG</title>
+  <desc id="desc">A transparent, static stroke-based house wireframe. Faces, roof, openings, gables and ground rings are separated into CSS-addressable groups. No animation is embedded.</desc>
+
+  <!--
+    CSS-ready structure:
+      .house-face             translucent plane fills
+      .house-line             all drawable outlines
+      .house-ring             ground rings
+      .region-walls           wall planes and outlines
+      .region-roof            roof planes and outlines
+      .region-openings        door and windows
+      .region-gables          gable outlines
+      .region-ground          ground rings
+
+    Every drawable outline has pathLength="1", allowing simple animation with:
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+
+    The SVG uses currentColor, so set the colour on the inline SVG:
+      .house-wireframe { color: #33d9c9; }
+  -->
+
+  <g id="house-faces" class="house-faces" fill="currentColor" stroke="none" pointer-events="none">
+    <g id="wall-faces" class="region-walls" fill-opacity="0.018">
+      <polygon class="house-face wall-face" points="-20.262,-72.857 298.906,-134.398 280.323,134.141 -18.662,263.408"/>
+      <polygon class="house-face wall-face" points="12.512,-176.604 -291.588,-139.532 -273.877,123.144 11.883,42.727"/>
+      <polygon class="house-face wall-face" points="-291.588,-139.532 -20.262,-72.857 -18.662,263.408 -273.877,123.144"/>
+      <polygon class="house-face wall-face" points="298.906,-134.398 12.512,-176.604 11.883,42.727 280.323,134.141"/>
+    </g>
+
+    <g id="roof-faces" class="region-roof" fill-opacity="0.018">
+      <polygon class="house-face roof-face" points="-256.720,-480.083 77.297,-452.440 219.816,-247.938 -106.294,-221.060"/>
+      <polygon class="house-face roof-face" points="-113.086,-502.604 230.643,-466.270 74.062,-258.368 -243.378,-237.632"/>
+    </g>
+  </g>
+
+  <g id="house-lines"
+     class="house-lines"
+     fill="none"
+     stroke="currentColor"
+     stroke-linecap="butt"
+     stroke-linejoin="miter"
+     vector-effect="non-scaling-stroke">
+
+    <g id="ground-rings" class="region-ground" stroke-width="1">
+      <ellipse id="ring-outer" class="house-line house-ring ring-outer" cx="0" cy="105" rx="325" ry="53.42" pathLength="1" opacity="0.07"/>
+      <ellipse id="ring-inner" class="house-line house-ring ring-inner" cx="0" cy="105" rx="260" ry="44.6" pathLength="1" opacity="0.12"/>
+    </g>
+
+    <g id="walls" class="region-walls" stroke-width="2.116" opacity="0.34">
+      <path id="wall-front" class="house-line wall-line wall-front" pathLength="1" d="M -20.262 -72.857 L 298.906 -134.398 L 280.323 134.141 L -18.662 263.408 Z"/>
+      <path id="wall-back" class="house-line wall-line wall-back" pathLength="1" d="M 12.512 -176.604 L -291.588 -139.532 L -273.877 123.144 L 11.883 42.727 Z"/>
+      <path id="wall-left" class="house-line wall-line wall-left" pathLength="1" d="M -291.588 -139.532 L -20.262 -72.857 L -18.662 263.408 L -273.877 123.144 Z"/>
+      <path id="wall-right" class="house-line wall-line wall-right" pathLength="1" d="M 298.906 -134.398 L 12.512 -176.604 L 11.883 42.727 L 280.323 134.141 Z"/>
+    </g>
+
+    <g id="openings" class="region-openings" stroke-width="2.116" opacity="0.34">
+      <path id="door" class="house-line opening-line door-line" pathLength="1" d="M 112.952 205.970 L 185.388 174.682 L 178.305 327.891 L 108.387 366.781 Z"/>
+      <path id="window-left" class="house-line opening-line window-line window-left" pathLength="1" d="M 8.796 8.930 L 79.241 -9.121 L 77.542 80.810 L 8.598 103.191 Z"/>
+      <path id="window-right" class="house-line opening-line window-line window-right" pathLength="1" d="M 228.656 -47.409 L 278.819 -60.263 L 273.736 17.120 L 224.302 33.168 Z"/>
+    </g>
+
+    <g id="roof" class="region-roof" stroke-width="2.116" opacity="0.62">
+      <path id="roof-front" class="house-line roof-line roof-front" pathLength="1" d="M -256.720 -480.083 L 77.297 -452.440 L 219.816 -247.938 L -106.294 -221.060 Z"/>
+      <path id="roof-back" class="house-line roof-line roof-back" pathLength="1" d="M -113.086 -502.604 L 230.643 -466.270 L 74.062 -258.368 L -243.378 -237.632 Z"/>
+    </g>
+
+    <g id="gables" class="region-gables" stroke-width="2.208" opacity="0.62">
+      <path id="gable-left" class="house-line gable-line gable-left" pathLength="1" d="M -178.355 -194.828 L -286.524 -64.418 L -19.798 24.652 Z"/>
+      <path id="gable-right" class="house-line gable-line gable-right" pathLength="1" d="M 141.858 -225.373 L 293.586 -57.524 L 12.334 -114.379 Z"/>
+    </g>
+  </g>
+</svg>

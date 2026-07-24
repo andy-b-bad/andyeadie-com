@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="800" height="800" viewBox="0 0 800 800"
+     color="#20C7C7" role="img" aria-labelledby="meshbrain-title meshbrain-desc">
+  <title id="meshbrain-title">CSS-ready wireframe brain</title>
+  <desc id="meshbrain-desc">A static mesh brain reconstructed from separate SVG stroke paths and node circles.</desc>
+  <!--
+    Static SVG: no animation is embedded.
+    Inline this SVG in HTML to target .mesh-line, .mesh-node, or any .region-* class with CSS.
+    Every line has pathLength="1" so stroke-dash animations can use normalised values from 0 to 1.
+  -->
+  <g id="meshbrain" class="meshbrain">
+    <g id="mesh-lines" fill="none" stroke="currentColor" stroke-width="2.15" stroke-linecap="round" stroke-linejoin="round">
+      <g id="region-left-lines" class="mesh-region region-left" aria-label="Left mesh lines">
+      <path id="mesh-line-001" class="mesh-line region-left" pathLength="1" d="M 108.69 391.59 L 151.48 499.45" />
+      <path id="mesh-line-002" class="mesh-line region-left" pathLength="1" d="M 166.53 352.35 L 108.69 391.59" />
+      <path id="mesh-line-003" class="mesh-line region-left" pathLength="1" d="M 198.44 243.04 L 108.69 391.59" />
+      <path id="mesh-line-005" class="mesh-line region-left" pathLength="1" d="M 179.6 326.6 L 166.53 352.35" />
+      <path id="mesh-line-006" class="mesh-line region-left" pathLength="1" d="M 221.78 426.48 L 151.48 499.45" />
+      <path id="mesh-line-007" class="mesh-line region-left" pathLength="1" d="M 166.53 352.35 L 221.78 426.48" />
+      <path id="mesh-line-008" class="mesh-line region-left" pathLength="1" d="M 220.22 315.94 L 179.6 326.6" />
+      <path id="mesh-line-009" class="mesh-line region-left" pathLength="1" d="M 221.78 426.48 L 192.83 520.79" />
+      <path id="mesh-line-011" class="mesh-line region-left" pathLength="1" d="M 228.39 269.93 L 220.22 315.94" />
+      <path id="mesh-line-013" class="mesh-line region-left" pathLength="1" d="M 220.22 315.94 L 253.59 376.88" />
+      <path id="mesh-line-014" class="mesh-line region-left" pathLength="1" d="M 253.59 376.88 L 221.78 426.48" />
+      <path id="mesh-line-016" class="mesh-line region-left" pathLength="1" d="M 285.08 414.54 L 221.78 426.48" />
+      <path id="mesh-line-018" class="mesh-line region-left" pathLength="1" d="M 228.39 269.93 L 284.56 345.38" />
+      <path id="mesh-line-020" class="mesh-line region-left" pathLength="1" d="M 284.56 345.38 L 253.59 376.88" />
+      </g>
+      <g id="region-crown-lines" class="mesh-region region-crown" aria-label="Upper mesh lines">
+      <path id="mesh-line-010" class="mesh-line region-crown" pathLength="1" d="M 198.44 243.04 L 228.39 269.93" />
+      <path id="mesh-line-015" class="mesh-line region-crown" pathLength="1" d="M 284.43 199.82 L 198.44 243.04" />
+      <path id="mesh-line-017" class="mesh-line region-crown" pathLength="1" d="M 284.43 199.82 L 228.39 269.93" />
+      <path id="mesh-line-019" class="mesh-line region-crown" pathLength="1" d="M 228.39 269.93 L 288.75 262" />
+      <path id="mesh-line-025" class="mesh-line region-crown" pathLength="1" d="M 284.43 199.82 L 304.14 208.5" />
+      <path id="mesh-line-026" class="mesh-line region-crown" pathLength="1" d="M 304.14 208.5 L 288.75 262" />
+      <path id="mesh-line-027" class="mesh-line region-crown" pathLength="1" d="M 304.59 294.88 L 288.75 262" />
+      <path id="mesh-line-031" class="mesh-line region-crown" pathLength="1" d="M 319.81 183.27 L 304.14 208.5" />
+      <path id="mesh-line-033" class="mesh-line region-crown" pathLength="1" d="M 304.14 208.5 L 340.8 240.95" />
+      <path id="mesh-line-034" class="mesh-line region-crown" pathLength="1" d="M 340.8 240.95 L 304.59 294.88" />
+      <path id="mesh-line-038" class="mesh-line region-crown" pathLength="1" d="M 319.81 183.27 L 356.81 181.93" />
+      <path id="mesh-line-039" class="mesh-line region-crown" pathLength="1" d="M 340.8 240.95 L 340.94 311.26" />
+      <path id="mesh-line-042" class="mesh-line region-crown" pathLength="1" d="M 392.74 234.91 L 340.8 240.95" />
+      <path id="mesh-line-043" class="mesh-line region-crown" pathLength="1" d="M 392.74 234.91 L 340.94 311.26" />
+      <path id="mesh-line-045" class="mesh-line region-crown" pathLength="1" d="M 356.81 181.93 L 392.74 234.91" />
+      <path id="mesh-line-046" class="mesh-line region-crown" pathLength="1" d="M 399.14 167.28 L 356.81 181.93" />
+      <path id="mesh-line-052" class="mesh-line region-crown" pathLength="1" d="M 399.14 167.28 L 392.74 234.91" />
+      <path id="mesh-line-053" class="mesh-line region-crown" pathLength="1" d="M 392.74 234.91 L 431.89 270.58" />
+      <path id="mesh-line-066" class="mesh-line region-crown" pathLength="1" d="M 558.53 214.41 L 392.74 234.91" />
+      <path id="mesh-line-067" class="mesh-line region-crown" pathLength="1" d="M 431.89 270.58 L 522.59 270.65" />
+      <path id="mesh-line-068" class="mesh-line region-crown" pathLength="1" d="M 399.14 167.28 L 558.53 214.41" />
+      <path id="mesh-line-079" class="mesh-line region-crown" pathLength="1" d="M 558.53 214.41 L 522.59 270.65" />
+      <path id="mesh-line-081" class="mesh-line region-crown" pathLength="1" d="M 522.59 270.65 L 593.15 285.45" />
+      <path id="mesh-line-084" class="mesh-line region-crown" pathLength="1" d="M 558.53 214.41 L 593.15 285.45" />
+      <path id="mesh-line-089" class="mesh-line region-crown" pathLength="1" d="M 558.53 214.41 L 637.41 282.93" />
+      </g>
+      <g id="region-centre-lines" class="mesh-region region-centre" aria-label="Central mesh lines">
+      <path id="mesh-line-022" class="mesh-line region-centre" pathLength="1" d="M 285.08 414.54 L 286.95 459.11" />
+      <path id="mesh-line-023" class="mesh-line region-centre" pathLength="1" d="M 299.76 340.38 L 284.56 345.38" />
+      <path id="mesh-line-024" class="mesh-line region-centre" pathLength="1" d="M 299.76 340.38 L 285.08 414.54" />
+      <path id="mesh-line-029" class="mesh-line region-centre" pathLength="1" d="M 286.95 459.11 L 317.4 474.6" />
+      <path id="mesh-line-030" class="mesh-line region-centre" pathLength="1" d="M 304.59 294.88 L 299.76 340.38" />
+      <path id="mesh-line-032" class="mesh-line region-centre" pathLength="1" d="M 340.94 311.26 L 299.76 340.38" />
+      <path id="mesh-line-036" class="mesh-line region-centre" pathLength="1" d="M 285.08 414.54 L 378.25 419.25" />
+      <path id="mesh-line-037" class="mesh-line region-centre" pathLength="1" d="M 387.71 348.43 L 285.08 414.54" />
+      <path id="mesh-line-041" class="mesh-line region-centre" pathLength="1" d="M 406.24 452.38 L 317.4 474.6" />
+      <path id="mesh-line-044" class="mesh-line region-centre" pathLength="1" d="M 340.94 311.26 L 395.58 308.26" />
+      <path id="mesh-line-048" class="mesh-line region-centre" pathLength="1" d="M 387.71 348.43 L 378.25 419.25" />
+      <path id="mesh-line-049" class="mesh-line region-centre" pathLength="1" d="M 406.24 452.38 L 362.12 504.54" />
+      <path id="mesh-line-050" class="mesh-line region-centre" pathLength="1" d="M 395.58 308.26 L 387.71 348.43" />
+      <path id="mesh-line-051" class="mesh-line region-centre" pathLength="1" d="M 378.25 419.25 L 406.24 452.38" />
+      <path id="mesh-line-054" class="mesh-line region-centre" pathLength="1" d="M 431.89 270.58 L 395.58 308.26" />
+      <path id="mesh-line-056" class="mesh-line region-centre" pathLength="1" d="M 462.5 383.75 L 378.25 419.25" />
+      <path id="mesh-line-058" class="mesh-line region-centre" pathLength="1" d="M 406.24 452.38 L 448.31 452.44" />
+      <path id="mesh-line-059" class="mesh-line region-centre" pathLength="1" d="M 480 325.63 L 387.71 348.43" />
+      <path id="mesh-line-060" class="mesh-line region-centre" pathLength="1" d="M 448.31 452.44 L 439.4 484.6" />
+      <path id="mesh-line-061" class="mesh-line region-centre" pathLength="1" d="M 431.89 270.58 L 480 325.63" />
+      <path id="mesh-line-062" class="mesh-line region-centre" pathLength="1" d="M 471.67 426.8 L 448.31 452.44" />
+      <path id="mesh-line-063" class="mesh-line region-centre" pathLength="1" d="M 462.5 383.75 L 471.67 426.8" />
+      <path id="mesh-line-065" class="mesh-line region-centre" pathLength="1" d="M 480 325.63 L 462.5 383.75" />
+      <path id="mesh-line-069" class="mesh-line region-centre" pathLength="1" d="M 471.67 426.8 L 494.67 435.54" />
+      <path id="mesh-line-071" class="mesh-line region-centre" pathLength="1" d="M 522.69 355.25 L 462.5 383.75" />
+      <path id="mesh-line-073" class="mesh-line region-centre" pathLength="1" d="M 522.59 270.65 L 480 325.63" />
+      <path id="mesh-line-074" class="mesh-line region-centre" pathLength="1" d="M 480 325.63 L 522.69 355.25" />
+      </g>
+      <g id="region-right-lines" class="mesh-region region-right" aria-label="Right mesh lines">
+      <path id="mesh-line-076" class="mesh-line region-right" pathLength="1" d="M 560.35 426.84 L 494.67 435.54" />
+      <path id="mesh-line-080" class="mesh-line region-right" pathLength="1" d="M 522.69 355.25 L 560.35 426.84" />
+      <path id="mesh-line-082" class="mesh-line region-right" pathLength="1" d="M 593.15 285.45 L 522.69 355.25" />
+      <path id="mesh-line-086" class="mesh-line region-right" pathLength="1" d="M 600.78 340.11 L 560.35 426.84" />
+      <path id="mesh-line-087" class="mesh-line region-right" pathLength="1" d="M 560.35 426.84 L 633.47 474.82" />
+      <path id="mesh-line-088" class="mesh-line region-right" pathLength="1" d="M 593.15 285.45 L 600.78 340.11" />
+      <path id="mesh-line-090" class="mesh-line region-right" pathLength="1" d="M 642.74 387.63 L 560.35 426.84" />
+      <path id="mesh-line-092" class="mesh-line region-right" pathLength="1" d="M 637.41 282.93 L 600.78 340.11" />
+      <path id="mesh-line-093" class="mesh-line region-right" pathLength="1" d="M 600.78 340.11 L 642.74 387.63" />
+      <path id="mesh-line-094" class="mesh-line region-right" pathLength="1" d="M 560.35 426.84 L 689.39 450.48" />
+      <path id="mesh-line-097" class="mesh-line region-right" pathLength="1" d="M 637.41 282.93 L 681.68 376.43" />
+      <path id="mesh-line-098" class="mesh-line region-right" pathLength="1" d="M 681.68 376.43 L 642.74 387.63" />
+      <path id="mesh-line-099" class="mesh-line region-right" pathLength="1" d="M 689.39 450.48 L 645.76 516.88" />
+      <path id="mesh-line-100" class="mesh-line region-right" pathLength="1" d="M 681.68 376.43 L 689.39 450.48" />
+      </g>
+      <g id="region-lower-lines" class="mesh-region region-lower" aria-label="Lower mesh lines">
+      <path id="mesh-line-004" class="mesh-line region-lower" pathLength="1" d="M 151.48 499.45 L 192.83 520.79" />
+      <path id="mesh-line-012" class="mesh-line region-lower" pathLength="1" d="M 192.83 520.79 L 270 520" />
+      <path id="mesh-line-021" class="mesh-line region-lower" pathLength="1" d="M 286.95 459.11 L 270 520" />
+      <path id="mesh-line-028" class="mesh-line region-lower" pathLength="1" d="M 270 520 L 328.29 527.75" />
+      <path id="mesh-line-035" class="mesh-line region-lower" pathLength="1" d="M 317.4 474.6 L 328.29 527.75" />
+      <path id="mesh-line-040" class="mesh-line region-lower" pathLength="1" d="M 362.12 504.54 L 328.29 527.75" />
+      <path id="mesh-line-047" class="mesh-line region-lower" pathLength="1" d="M 362.12 504.54 L 400.08 504.88" />
+      <path id="mesh-line-055" class="mesh-line region-lower" pathLength="1" d="M 439.4 484.6 L 400.08 504.88" />
+      <path id="mesh-line-057" class="mesh-line region-lower" pathLength="1" d="M 400.08 504.88 L 444.22 555.67" />
+      <path id="mesh-line-064" class="mesh-line region-lower" pathLength="1" d="M 494.67 435.54 L 444.22 555.67" />
+      <path id="mesh-line-070" class="mesh-line region-lower" pathLength="1" d="M 444.22 555.67 L 523.88 572.96" />
+      <path id="mesh-line-072" class="mesh-line region-lower" pathLength="1" d="M 444.22 555.67 L 545.55 630.41" />
+      <path id="mesh-line-075" class="mesh-line region-lower" pathLength="1" d="M 494.67 435.54 L 541.12 548" />
+      <path id="mesh-line-077" class="mesh-line region-lower" pathLength="1" d="M 541.12 548 L 523.88 572.96" />
+      <path id="mesh-line-078" class="mesh-line region-lower" pathLength="1" d="M 523.88 572.96 L 545.55 630.41" />
+      <path id="mesh-line-083" class="mesh-line region-lower" pathLength="1" d="M 541.12 548 L 593.87 547.47" />
+      <path id="mesh-line-085" class="mesh-line region-lower" pathLength="1" d="M 560.35 426.84 L 593.87 547.47" />
+      <path id="mesh-line-091" class="mesh-line region-lower" pathLength="1" d="M 623.44 518.89 L 593.87 547.47" />
+      <path id="mesh-line-095" class="mesh-line region-lower" pathLength="1" d="M 633.47 474.82 L 623.44 518.89" />
+      <path id="mesh-line-096" class="mesh-line region-lower" pathLength="1" d="M 645.76 516.88 L 623.44 518.89" />
+      </g>
+    </g>
+    <g id="mesh-nodes" fill="currentColor">
+      <g id="region-left-nodes" class="mesh-region region-left" aria-label="Left mesh nodes">
+      <circle id="mesh-node-001" class="mesh-node region-left" cx="108.69" cy="391.59" r="5" />
+      <circle id="mesh-node-003" class="mesh-node region-left" cx="166.53" cy="352.35" r="4" />
+      <circle id="mesh-node-004" class="mesh-node region-left" cx="179.6" cy="326.6" r="4" />
+      <circle id="mesh-node-007" class="mesh-node region-left" cx="220.22" cy="315.94" r="4.2" />
+      <circle id="mesh-node-008" class="mesh-node region-left" cx="221.78" cy="426.48" r="4.39" />
+      <circle id="mesh-node-010" class="mesh-node region-left" cx="253.59" cy="376.88" r="4" />
+      <circle id="mesh-node-013" class="mesh-node region-left" cx="284.56" cy="345.38" r="4" />
+      </g>
+      <g id="region-crown-nodes" class="mesh-region region-crown" aria-label="Upper mesh nodes">
+      <circle id="mesh-node-006" class="mesh-node region-crown" cx="198.44" cy="243.04" r="4.39" />
+      <circle id="mesh-node-009" class="mesh-node region-crown" cx="228.39" cy="269.93" r="5" />
+      <circle id="mesh-node-012" class="mesh-node region-crown" cx="284.43" cy="199.82" r="5" />
+      <circle id="mesh-node-017" class="mesh-node region-crown" cx="304.14" cy="208.5" r="5" />
+      <circle id="mesh-node-020" class="mesh-node region-crown" cx="319.81" cy="183.27" r="4.39" />
+      <circle id="mesh-node-022" class="mesh-node region-crown" cx="340.8" cy="240.95" r="4.2" />
+      <circle id="mesh-node-024" class="mesh-node region-crown" cx="356.81" cy="181.93" r="5" />
+      <circle id="mesh-node-028" class="mesh-node region-crown" cx="392.74" cy="234.91" r="4.2" />
+      <circle id="mesh-node-030" class="mesh-node region-crown" cx="399.14" cy="167.28" r="5" />
+      <circle id="mesh-node-033" class="mesh-node region-crown" cx="431.89" cy="270.58" r="4" />
+      <circle id="mesh-node-041" class="mesh-node region-crown" cx="522.59" cy="270.65" r="4" />
+      <circle id="mesh-node-046" class="mesh-node region-crown" cx="558.53" cy="214.41" r="5" />
+      <circle id="mesh-node-053" class="mesh-node region-crown" cx="637.41" cy="282.93" r="5" />
+      </g>
+      <g id="region-centre-nodes" class="mesh-region region-centre" aria-label="Central mesh nodes">
+      <circle id="mesh-node-014" class="mesh-node region-centre" cx="285.08" cy="414.54" r="4.39" />
+      <circle id="mesh-node-015" class="mesh-node region-centre" cx="286.95" cy="459.11" r="4.2" />
+      <circle id="mesh-node-016" class="mesh-node region-centre" cx="299.76" cy="340.38" r="4.2" />
+      <circle id="mesh-node-018" class="mesh-node region-centre" cx="304.59" cy="294.88" r="4" />
+      <circle id="mesh-node-019" class="mesh-node region-centre" cx="317.4" cy="474.6" r="4" />
+      <circle id="mesh-node-023" class="mesh-node region-centre" cx="340.94" cy="311.26" r="6.39" />
+      <circle id="mesh-node-026" class="mesh-node region-centre" cx="378.25" cy="419.25" r="4.2" />
+      <circle id="mesh-node-027" class="mesh-node region-centre" cx="387.71" cy="348.43" r="4.2" />
+      <circle id="mesh-node-029" class="mesh-node region-centre" cx="395.58" cy="308.26" r="4.2" />
+      <circle id="mesh-node-032" class="mesh-node region-centre" cx="406.24" cy="452.38" r="4" />
+      <circle id="mesh-node-034" class="mesh-node region-centre" cx="439.4" cy="484.6" r="4" />
+      <circle id="mesh-node-036" class="mesh-node region-centre" cx="448.31" cy="452.44" r="4" />
+      <circle id="mesh-node-037" class="mesh-node region-centre" cx="462.5" cy="383.75" r="4.2" />
+      <circle id="mesh-node-038" class="mesh-node region-centre" cx="471.67" cy="426.8" r="4" />
+      <circle id="mesh-node-039" class="mesh-node region-centre" cx="480" cy="325.63" r="4.2" />
+      <circle id="mesh-node-040" class="mesh-node region-centre" cx="494.67" cy="435.54" r="7" />
+      </g>
+      <g id="region-right-nodes" class="mesh-region region-right" aria-label="Right mesh nodes">
+      <circle id="mesh-node-042" class="mesh-node region-right" cx="522.69" cy="355.25" r="4" />
+      <circle id="mesh-node-047" class="mesh-node region-right" cx="560.35" cy="426.84" r="7.39" />
+      <circle id="mesh-node-048" class="mesh-node region-right" cx="593.15" cy="285.45" r="4.2" />
+      <circle id="mesh-node-050" class="mesh-node region-right" cx="600.78" cy="340.11" r="4" />
+      <circle id="mesh-node-052" class="mesh-node region-right" cx="633.47" cy="474.82" r="4" />
+      <circle id="mesh-node-054" class="mesh-node region-right" cx="642.74" cy="387.63" r="4.2" />
+      <circle id="mesh-node-056" class="mesh-node region-right" cx="681.68" cy="376.43" r="5" />
+      <circle id="mesh-node-057" class="mesh-node region-right" cx="689.39" cy="450.48" r="4.39" />
+      </g>
+      <g id="region-lower-nodes" class="mesh-region region-lower" aria-label="Lower mesh nodes">
+      <circle id="mesh-node-002" class="mesh-node region-lower" cx="151.48" cy="499.45" r="5" />
+      <circle id="mesh-node-005" class="mesh-node region-lower" cx="192.83" cy="520.79" r="5" />
+      <circle id="mesh-node-011" class="mesh-node region-lower" cx="270" cy="520" r="5" />
+      <circle id="mesh-node-021" class="mesh-node region-lower" cx="328.29" cy="527.75" r="5" />
+      <circle id="mesh-node-025" class="mesh-node region-lower" cx="362.12" cy="504.54" r="5" />
+      <circle id="mesh-node-031" class="mesh-node region-lower" cx="400.08" cy="504.88" r="5" />
+      <circle id="mesh-node-035" class="mesh-node region-lower" cx="444.22" cy="555.67" r="5" />
+      <circle id="mesh-node-043" class="mesh-node region-lower" cx="523.88" cy="572.96" r="5" />
+      <circle id="mesh-node-044" class="mesh-node region-lower" cx="541.12" cy="548" r="5" />
+      <circle id="mesh-node-045" class="mesh-node region-lower" cx="545.55" cy="630.41" r="5" />
+      <circle id="mesh-node-049" class="mesh-node region-lower" cx="593.87" cy="547.47" r="5" />
+      <circle id="mesh-node-051" class="mesh-node region-lower" cx="623.44" cy="518.89" r="5" />
+      <circle id="mesh-node-055" class="mesh-node region-lower" cx="645.76" cy="516.88" r="5" />
+      </g>
+    </g>
+  </g>
+</svg>
